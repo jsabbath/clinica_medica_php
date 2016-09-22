@@ -13,7 +13,7 @@ class Home extends CI_Controller
 
      public function index()
     {
-        $this->load->view('mostratec/home/home', $this->data);
+        $this->load->view('med-system/home/home', $this->data);
     }
         
 }   

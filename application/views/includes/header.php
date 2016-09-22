@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>MostracTec</title>
+    <title>Med System</title>
 
     <?php $this->load->view("includes/header_sources");//carregamos arquivos de estilo ?>
 
@@ -17,8 +17,8 @@
 
 <body>
 
-    <div class="brand">Projeto Mostratec</div>
-    <div class="address-bar">Iniciação Científica</div>
+    <div class="brand">Projeto Med System</div>
+    <div class="address-bar">Sua Saúde É Nosso Dever</div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Business Casual</a>
+                <a class="navbar-brand" href="<?= base_url()?>">Business Casual</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -47,13 +47,13 @@
                         <a href="about.html">About</a>
                     </li>
                     <li>
-                        <a href="<?= base_url('cadastro')?>">Cadastro</a>
+                        <a href="<?= base_url('precadastro/pacientes')?>">Pré Cadastro</a>
                     </li>
                     <li>
                         <a href="<?= base_url('grupos/home/1') ?>">Grupos</a>
                     </li>
                     <li>
-                        <a id='logoff'>Logoff</a>
+                        <a href="<?= base_url('logout') ?>">Logoff</a>
                     </li>
                 </ul>
             </div>

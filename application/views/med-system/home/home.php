@@ -58,8 +58,8 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Iniciação Científica
-                        <strong>Mostratec</strong>
+                    <h2 class="intro-text text-center">HomeCare Technology
+                        <strong>Med System</strong>
                     </h2>
                     <hr>
                     <img class="img-responsive img-border img-left"src="<?= base_url('uploads/home/img/intro-pic.jpg')?>" alt="">
@@ -78,16 +78,15 @@
                         <strong>Faça login abaixo!</strong>
                     </h2>
                     <hr>
-                    <form class="form-horizontal" method="post" action="php/login.php" id="login_form">
+                    <form class="form-horizontal" method="post" action="<?= base_url('login') ?>" id="login_form">
                         
                         <fieldset>
                         
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="email">Email:</label>  
+                          <label class="col-md-4 control-label" for="login">Login:</label>  
                           <div class="col-md-4">
-                          <input id="email" name="email" type="email" placeholder="endereço de email" class="form-control input-md" required="">
-                            
+                          <input id="login" name="login" type="text" placeholder="login" class="form-control input-md" required="">
                           </div>
                         </div>
                         
@@ -121,7 +120,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; Projeto Mostratec de Iniciação Científica</p>
+                    <p>Copyright &copy; HomeCare Technology</p>
                 </div>
             </div>
         </div>

@@ -56,7 +56,12 @@ $route['blog/home/(:num)'] = "blog/homepage/$1";
 
 $route['grupos/home/(:num)'] = "groups/homepage/$1";
 
-$route['cadastro'] = "cadastro/users";
+$route['precadastro/pacientes'] = "pre_cadastro/form";
+$route['precadastro/salvar'] = "pre_cadastro/save";
+
+$route['login'] = "Pacientes/login";
+
+$route['logout'] = "Pacientes/logout";
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
