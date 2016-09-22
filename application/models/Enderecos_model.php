@@ -16,6 +16,7 @@ class Enderecos_model extends CI_Model
     public function insert()
     {
         $this->db->insert("enderecos", $this);
+        return $this->db->insert_id();
     }
     
     public function delete()

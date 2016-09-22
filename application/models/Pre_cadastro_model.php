@@ -18,6 +18,7 @@ class Pre_cadastro_model extends CI_Model
     public function insert()
     {
         $this->db->insert("pre_cadastro", $this);
+        return $this->db->insert_id();
     }
     
     public function delete()

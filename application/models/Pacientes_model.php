@@ -20,6 +20,7 @@ class Pacientes_model extends CI_Model
     public function insert()
     {
         $this->db->insert("pacientes", $this);
+        return $this->db->insert_id();
     }
     
     public function delete()

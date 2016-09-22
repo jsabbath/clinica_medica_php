@@ -115,16 +115,6 @@
         </div>
     </div>
     <!-- /.container -->
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>Copyright &copy; HomeCare Technology</p>
-                </div>
-            </div>
-        </div>
-    </footer>
     
     <?php $this->load->view("includes/footer_sources");//carregamos os scripts e plugins da pagina ?>
     
