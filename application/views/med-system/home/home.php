@@ -116,7 +116,7 @@
     </div>
     <!-- /.container -->
     
-    <?php $this->load->view("includes/footer_sources");//carregamos os scripts e plugins da pagina ?>
+    <?php $this->load->view("includes/footer");//carregamos os scripts e plugins da pagina ?>
     
     <!-- Script to Activate the Carousel -->
     <script>
@@ -125,6 +125,4 @@
     })
     </script>
 
-</body>
 
-</html>
