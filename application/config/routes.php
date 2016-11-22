@@ -52,12 +52,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = "home";
 
-$route['blog/home/(:num)'] = "blog/homepage/$1";
-
 $route['grupos/home/(:num)'] = "groups/homepage/$1";
 
 $route['precadastro/pacientes'] = "pre_cadastro/form";
 $route['precadastro/salvar'] = "pre_cadastro/save";
+
+$route['consultas/dashboard'] = "";
 
 $route['login'] = "Pacientes/login";
 

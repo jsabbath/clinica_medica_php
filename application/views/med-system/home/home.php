@@ -84,9 +84,9 @@
                         
                         <!-- Text input-->
                         <div class="form-group">
-                          <label class="col-md-4 control-label" for="login">Login:</label>  
+                          <label class="col-md-4 control-label" for="login">Email:</label>  
                           <div class="col-md-4">
-                          <input id="login" name="login" type="text" placeholder="login" class="form-control input-md" required="">
+                          <input id="email" name="email" type="text" placeholder="email" class="form-control input-md" required="">
                           </div>
                         </div>
                         

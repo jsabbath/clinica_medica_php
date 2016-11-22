@@ -44,7 +44,7 @@
                         <a href="<?= base_url("blog/home/1")?>">Blog</a> <!-- mudar 1 para id do user logado -->
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="<?= base_url("consultas/dashboard") ?>">Consultas</a>
                     </li>
                     <li>
                         <a href="<?= base_url('precadastro/pacientes')?>">Pré Cadastro</a>
@@ -62,3 +62,4 @@
         </div>
         <!-- /.container -->
     </nav>
+    <?php show_messages(); ?>

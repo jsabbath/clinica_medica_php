@@ -13,18 +13,17 @@ class Pacientes extends CI_Controller
      public function login()
     {
         $this->load->model("Pacientes_model","paciente");
-        $this->paciente->login = $this->input->post('login', TRUE);
+        $this->paciente->email = $this->input->post('email', TRUE);
         $this->paciente->senha = md5($this->input->post('senha', TRUE));
         if(!$this->paciente->check_login())
         {
+            $this->session->set_flashdata("error","Verifique suas infromações de login!");
             redirect(base_url(), 'refresh');
         }
         $paciente = $this->paciente->load_obj_login();
         $this->session->set_userdata('paciente_id', $paciente->id);
         $this->session->set_userdata('paciente_nome', $paciente->nome);
-        $this->session->set_userdata('paciente_login', $paciente->login);
         $this->session->set_userdata('paciente_email', $paciente->email);
-        var_dump($this->session); exit;
         redirect(base_url(), 'refresh');
     }
     

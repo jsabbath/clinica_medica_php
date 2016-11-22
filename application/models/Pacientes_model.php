@@ -53,7 +53,7 @@ class Pacientes_model extends CI_Model
 	public function check_login()
 	{
 	    $this->db->from("pacientes");
-	    $this->db->where("login", $this->login);
+	    $this->db->where("email", $this->email);
 	    $this->db->where("senha", $this->senha);
 	    $query = $this->db->get();
 	    if($query->num_rows() == 1)
