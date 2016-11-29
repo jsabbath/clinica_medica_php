@@ -63,13 +63,22 @@ $route['consultas/create'] = "pages/create_consult";
 $route['login'] = "pages/patientLogin";
 $route['logout'] = "pages/logout";
 
-//medico
+//medicos
 $route['medicos'] = "medicos";
 $route['medicos/logar'] = "medicos/login";
 $route['medicos/consultas'] = "medicos/consults";
 $route['medicos/consultas/realizar/(:num)'] = "medicos/make_consult/$1";
 $route['medicos/consultas/salvar/(:num)'] = "medicos/save_consult/$1";
 
+//secretarios
+$route['secretarios'] = "secretarios";
+$route['secretarios/logar'] = "secretarios/login";
+$route['secretarios/consultas'] = "secretarios/consults";
+$route['secretarios/consultas/pagar/(:num)'] = "secretarios/pay_consult/$1";
+$route['secretarios/medicos'] = "secretarios/doctors";
+$route['secretarios/medicos/novo'] = "secretarios/new_doctor";
+$route['secretarios/medicos/add'] = "secretarios/add_doctor";
+$route['secretarios/medicos/del/(:num)'] = "secretarios/delete_doctor/$1";
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

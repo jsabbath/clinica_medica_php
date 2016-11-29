@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="panel-footer">
-                    Verifique seu diagnóstico antes de confirmar.
+                    Verifique seus diagnóstico antes de confirmar.
                 </div>
             </div>
         </div>

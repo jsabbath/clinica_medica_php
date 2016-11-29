@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Medicos</title>
+    <title>Secretarios - ADM</title>
     
     <?php $this->load->view("includes/header_sources");//carregamos arquivos de estilo ?>
    
@@ -36,12 +36,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h1>Médicos</h1>
+                        <h1>Secretários</h1>
                     </div>
                 </div>                
                 <div class="row">
                     <div class="col-lg-4 col-lg-offset-4">
-                        <form class="form-horizontal" method="post" action="<?= base_url('medicos/logar')?>" id="login_form">
+                        <form class="form-horizontal" method="post" action="<?= base_url('secretarios/logar')?>" id="login_form">
                             <fieldset>
                                 <!-- Text input-->
                                 <div class="form-group">

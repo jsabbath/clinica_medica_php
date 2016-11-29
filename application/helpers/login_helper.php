@@ -26,7 +26,7 @@
 		{
 			$CI =& get_instance();
 			$CI->load->helper('login');
-			return ( $CI->session->userdata('secretary_id') != "" );
+			return ( $CI->session->userdata('secretario_id') != "" );
 		}
 	}
 	

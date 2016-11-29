@@ -93,6 +93,19 @@ class Consultas_model extends CI_Model
 	    $this->db->update('consultas');
 	    return $this->db->trans_status();
 	}
+	
+	public function load_all()
+	{
+		$this->db->select('c.*,m.nome as medico_m,p.nome as paciente_m,e.nome as especialidade,c.done as done');
+	    $this->db->from("consultas c");
+	    $this->db->join("pacientes p","p.id = c.paciente");
+	    $this->db->join("medicos m","m.id = c.medico");
+	    $this->db->join("especialidades e","e.id = m.especialidade");
+	    $this->db->order_by("id","desc");
+	    $query = $this->db->get();
+	    return $query->result();
+	}
+	
 }
 
 ?>

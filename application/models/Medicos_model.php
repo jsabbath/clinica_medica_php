@@ -8,10 +8,8 @@ class Medicos_model extends CI_Model
     var $cpf;
     var $email;
     var $telefone;
-    var $login;
     var $senha;
     var $crm;
-    var $disponibilidade;
     var $especialidade;
     var $endereco;
     
@@ -34,7 +32,7 @@ class Medicos_model extends CI_Model
     public function load_by_id()
     {
     	$sql = "select * from medicos where id=?";
-    	$query = $this->db->query($sql, array($this->id_usuario));
+    	$query = $this->db->query($sql, array($this->id));
         return $query->row(0, "Medicos_model");
     }
     
@@ -64,7 +62,6 @@ class Medicos_model extends CI_Model
 	    $this->db->where("email", $this->email);
 	    $this->db->like("senha", $this->senha);
 	    $query = $this->db->get();
-    	   var_dump($this->db->last_query());//exit;
 	    if($query->num_rows() == 1)
 	        return true;
 	    return false;
@@ -78,6 +75,15 @@ class Medicos_model extends CI_Model
         $this->db->like("senha",$this->senha);
     	$query = $this->db->get();
         return $query->row(0, "Medicos_model");
+    }
+    
+    public function load_all()
+    {
+        $this->db->select("m.*,e.nome as especialidade_m");
+        $this->db->from("medicos m");
+        $this->db->join("especialidades e","e.id = m.especialidade");
+    	$query = $this->db->get();
+        return $query->result();
     }
 	
 }

@@ -8,10 +8,8 @@ class Secretarios_model extends CI_Model
     var $cpf;
     var $email;
     var $telefone;
-    var $login;
     var $senha;
     var $salario;
-    var $funcao;
     var $endereco;
     
     function __construct()
@@ -43,6 +41,28 @@ class Secretarios_model extends CI_Model
 		$this->db->update("secretarios", $this);
 		return $this->db->trans_status();
 	}
+	
+	public function check_login()
+	{
+	    $this->db->from("secretarios");
+	    $this->db->where("email", $this->email);
+	    $this->db->like("senha", $this->senha);
+	    $query = $this->db->get();
+	    if($query->num_rows() == 1)
+	        return true;
+	    return false;
+	}
+	
+	public function load_obj_login()
+    {
+        $this->db->select("*");
+        $this->db->from("secretarios");
+        $this->db->where("email",$this->email);
+        $this->db->like("senha",$this->senha);
+    	$query = $this->db->get();
+        return $query->row(0, "Secretarios_model");
+    }
+	
 }
 
 ?>

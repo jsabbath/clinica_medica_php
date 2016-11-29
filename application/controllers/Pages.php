@@ -141,6 +141,7 @@ class Pages extends CI_Controller
         $this->consulta->medico = $this->input->post("medico",null);
         $this->consulta->paciente = $this->session->userdata('paciente_id');
         $this->consulta->pago = 0;
+        $this->consulta->done = 0;
         $this->consulta->insert();
         $this->session->set_flashdata("success","Consulta Criada Com Sucesso!");
         redirect(base_url('consultas/dashboard'), 'refresh');

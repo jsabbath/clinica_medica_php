@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Disponibilidade_model extends CI_Model
+class Especialidades_model extends CI_Model
 {
     var $id;
     var $nome;
@@ -14,6 +14,7 @@ class Disponibilidade_model extends CI_Model
     public function insert()
     {
         $this->db->insert("especialidades", $this);
+        return $this->db->insert_id();
     }
     
     public function delete()
