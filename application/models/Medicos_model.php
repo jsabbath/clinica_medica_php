@@ -62,8 +62,9 @@ class Medicos_model extends CI_Model
 	{
 	    $this->db->from("medicos");
 	    $this->db->where("email", $this->email);
-	    $this->db->where("senha", $this->senha);
+	    $this->db->like("senha", $this->senha);
 	    $query = $this->db->get();
+    	   var_dump($this->db->last_query());//exit;
 	    if($query->num_rows() == 1)
 	        return true;
 	    return false;
@@ -71,8 +72,11 @@ class Medicos_model extends CI_Model
 	
 	public function load_obj_login()
     {
-        $sql = "select * from medicos where email=? and senha=?";
-    	$query = $this->db->query($sql, array($this->email, $this->senha));
+        $this->db->select("*");
+        $this->db->from("medicos");
+        $this->db->where("email",$this->email);
+        $this->db->like("senha",$this->senha);
+    	$query = $this->db->get();
         return $query->row(0, "Medicos_model");
     }
 	

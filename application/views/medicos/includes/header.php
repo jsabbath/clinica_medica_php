@@ -47,7 +47,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="<?= base_url('admin/logout') ?>"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="<?= base_url('logout') ?>"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>

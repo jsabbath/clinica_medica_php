@@ -26,7 +26,7 @@ class Medicos extends CI_Controller
         if(!$this->medico->check_login())
         {
             $this->session->set_flashdata("error","Verifique suas informações de login!");
-            redirect(base_url(), 'refresh');
+            //redirect(base_url(), 'refresh');
         }
         $medico = $this->medico->load_obj_login();
         $this->session->set_userdata('medico_id', $medico->id);
@@ -73,7 +73,19 @@ class Medicos extends CI_Controller
     
     public function save_consult($id)
     {
-        
+        if(!is_doctor())
+        {
+            $this->session->set_flashdata("error","Você não tem permissão para acessar essa área do site!");
+            redirect(base_url(), 'refresh');
+        }
+        $this->load->model("Consultas_model","consulta");
+        $this->consulta->id = $id;
+        $this->consulta->diagnostico = $this->input->post("diagnostico",null);
+        $this->consulta->valor = $this->input->post("valor",null);
+        $this->consulta->done = 1;
+        $this->consulta->set_consult_done();
+        $this->session->set_flashdata("success","Consulta realizada Com Sucesso!");
+        redirect(base_url('medicos/consultas'), 'refresh');
     }
     
 }   

@@ -76,6 +76,16 @@ class Consultas_model extends CI_Model
 	    return $query->row();
 	}
 	
+	public function set_consult_done()
+	{
+	    $this->db->set("done",1);
+	    $this->db->set("diagnostico",$this->diagnostico);
+	    $this->db->set("valor",$this->valor);
+	    $this->db->where("id", $this->id);
+	    $this->db->update('consultas');
+	    return $this->db->trans_status();
+	}
+	
 	public function set_paid()
 	{
 	    $this->db->set("pago",1);

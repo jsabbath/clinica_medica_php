@@ -36,11 +36,17 @@
                                         <?= $consulta->diagnostico ?>
                                     </div>
                                         <div class="col-lg-2 text-center">
+                                            <?php if($consulta->done == 0){ ?>
                                 			 <a href='<?= base_url("medicos/consultas/realizar/".$consulta->id) ?>'>
                                                 <button type="button" class="btn btn-success">
                                     			      Realizar Consulta
                                     			 </button>
                                 			 </a>
+                                			 <?php }else{ ?>
+                                			     <button type="button" class="btn btn-primary" disabled=true>
+                                    			      Realizada
+                                    			 </button>
+                                			 <?php } ?>
                             			 </div>
                                 </div>
                                 <div class="panel-footer">
