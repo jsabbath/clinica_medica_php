@@ -41,20 +41,18 @@
                         <a href="<?= base_url()?>">Home</a>
                     </li>
                     <li>
-                        <a href="<?= base_url("blog/home/1")?>">Blog</a> <!-- mudar 1 para id do user logado -->
-                    </li>
-                    <li>
                         <a href="<?= base_url("consultas/dashboard") ?>">Consultas</a>
                     </li>
-                    <li>
-                        <a href="<?= base_url('precadastro/pacientes')?>">Pré Cadastro</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('grupos/home/1') ?>">Grupos</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('logout') ?>">Logoff</a>
-                    </li>
+                    <?php if(!is_patient()){ ?>
+                        <li>
+                            <a href="<?= base_url('precadastro/pacientes')?>">Pré Cadastro</a>
+                        </li>
+                    <?php } ?>
+                    <?php if(is_patient()){ ?>
+                        <li>
+                            <a href="<?= base_url('logout') ?>">Logoff</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -54,6 +54,15 @@
                         
                         <!-- Text input-->
                         <div class="form-group">
+                          <label class="col-md-4 control-label" for="senha">Senha:</label>  
+                          <div class="col-md-4">
+                          <input id="senha" name="senha" type="password"class="form-control input-md" required="">
+                            
+                          </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
                           <label class="col-md-4 control-label" for="telefone">Telefone:</label>  
                           <div class="col-md-4">
                           <input id="telefone" name="telefone" type="text" placeholder="" class="form-control input-md" required="">

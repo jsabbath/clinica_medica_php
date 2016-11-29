@@ -8,9 +8,9 @@ class Pacientes_model extends CI_Model
     var $cpf;
     var $email;
     var $telefone;
-    var $login;
     var $senha;
     var $endereco;
+    var $active;
     
     function __construct()
     {
@@ -20,7 +20,7 @@ class Pacientes_model extends CI_Model
     public function insert()
     {
         $this->db->insert("pacientes", $this);
-        return $this->db->insert_id();
+        return $this->db->trans_status();
     }
     
     public function delete()
@@ -55,6 +55,7 @@ class Pacientes_model extends CI_Model
 	    $this->db->from("pacientes");
 	    $this->db->where("email", $this->email);
 	    $this->db->where("senha", $this->senha);
+	    $this->db->where("active", 1);
 	    $query = $this->db->get();
 	    if($query->num_rows() == 1)
 	        return true;

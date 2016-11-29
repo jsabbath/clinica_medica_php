@@ -50,18 +50,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route['default_controller'] = "home";
+$route['default_controller'] = "pages";
 
-$route['grupos/home/(:num)'] = "groups/homepage/$1";
 
-$route['precadastro/pacientes'] = "pre_cadastro/form";
-$route['precadastro/salvar'] = "pre_cadastro/save";
+//paciente
+$route['precadastro/pacientes'] = "pages/pre_cadastro";
+$route['precadastro/salvar'] = "pages/save_pre_cadastro";
+$route['consultas/dashboard'] = "pages/consults";
+$route['consultas/pagar/(:num)'] = "pages/pay/$1";
+$route['consultas/nova'] = "pages/new_consult";
+$route['consultas/create'] = "pages/create_consult";
+$route['login'] = "pages/patientLogin";
+$route['logout'] = "pages/logout";
 
-$route['consultas/dashboard'] = "";
+//medico
+$route['medicos'] = "medicos";
+$route['medicos/logar'] = "medicos/login";
+$route['medicos/consultas'] = "medicos/consults";
+$route['medicos/consultas/realizar/(:num)'] = "medicos/make_consult/$1";
+$route['medicos/consultas/salvar/(:num)'] = "medicos/save_consult/$1";
 
-$route['login'] = "Pacientes/login";
-
-$route['logout'] = "Pacientes/logout";
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
